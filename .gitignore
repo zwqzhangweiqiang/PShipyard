@@ -1,0 +1,17 @@
+*.pyc
+*.sw*
+*.un*
+local_settings.py
+*.log
+newrelic.ini
+*.egg-info/*
+*build/*
+*dist/*
+.vagrant*
+*.gz
+*.db
+static_root/*
+images/templates/images/index.html_bak
+ngx_openresty-1.4.3.6/
+roadmap.md
+
