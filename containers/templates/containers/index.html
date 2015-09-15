@@ -34,7 +34,15 @@
                     <td>{{c.get_meta.Name}}</td>
                     <td>{{c.description}}</td>
                     <td>{{c.get_meta.Config.Image}}</td>
-                    <td>{{c.get_meta.Config.Cmd|join:" "}}</td>
+                    {% if c.get_meta.Config.Cmd %}
+                    	<td>{{c.get_meta.Config.Cmd|join:" "}}</td>
+					{% else %}
+						{% if c.get_meta.Config.Entrypoint %}
+                    	    <td>{{c.get_meta.Config.Entrypoint|join:" "}}</td>
+						{% else %}
+                    	    <td></td>
+						{% endif %}
+					{% endif %}
                     <td>{{c.host.name}}</td>
                     <td>
                         <div class="btn-group">
