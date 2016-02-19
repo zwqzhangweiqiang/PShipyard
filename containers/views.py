@@ -277,7 +277,7 @@ def attach_container(request, host, container_id):
     ctx = {
         'container_id': container_id,
         'container_name': c.description or container_id,
-        'ws_url': 'ws://{0}/console/{1}/'.format(request.META['HTTP_HOST'], session_id),
+        'ws_url': 'ws://{0}'.format(session_id),
     }
     print ctx
     return render_to_response("containers/attach.html", ctx,
