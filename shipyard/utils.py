@@ -43,7 +43,7 @@ def generate_console_session(host, container):
 
     rds.hmset(key, { 'host': docker_host, 'path': attach_path })
     rds.expire(key, 120)
-    return session_id
+    return rds.hmget(key,'host')[0]+rds.hmget(key,'path')[0]
 
 def update_hipache(app_id=None):
     from applications.models import Application
